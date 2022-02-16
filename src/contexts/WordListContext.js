@@ -95,6 +95,25 @@ export function WordListProvider({ children }) {
 
   }, [filter.forth]);
 
+  useEffect(() => {
+
+    let arr = [...forthFilter]
+
+    if (filter.fifth.isComplete) {
+      arr = filterLetter(arr, filter.fifth.wordInfo.first.value, 0, filter.fifth.wordInfo.first.answer)
+      arr = filterLetter(arr, filter.fifth.wordInfo.second.value, 1, filter.fifth.wordInfo.second.answer)
+      arr = filterLetter(arr, filter.fifth.wordInfo.third.value, 2, filter.fifth.wordInfo.third.answer)
+      arr = filterLetter(arr, filter.fifth.wordInfo.forth.value, 3, filter.fifth.wordInfo.forth.answer)
+      arr = filterLetter(arr, filter.fifth.wordInfo.fifth.value, 4, filter.fifth.wordInfo.fifth.answer)
+    }
+    else {
+      arr = [...forthFilter]
+    }
+
+    setWordList(arr)
+
+  }, [filter.fifth]);
+
   return (
     <WordListContext.Provider value={{ wordList, setWordList }}>
       {children}
