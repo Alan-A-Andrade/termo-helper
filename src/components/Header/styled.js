@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HeaderStyled = styled.header`
-  width:250;
+  width:100%;
   display: flex;
   align-items: center;
   justify-content: space-between;

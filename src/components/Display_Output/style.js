@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const DisplayOutputStyled = styled.section`
 
@@ -27,25 +27,29 @@ flex-direction: column;
 
 `
 
+const showWord = keyframes`
+ 0% {
+  transform: translate(0px, -20px);
+  opacity: 0
+}
+ 100% {
+  transform: translate(0px, 0px);
+  opacity: 1
+}
+`
+
 const WordStyled = styled.h1`
 font-size: 0.95em;
 opacity: 0;
 animation-fill-mode: forwards;
-animation-name: example;
-  animation-duration: 1s;
-  animation-delay: ${Props => `${Props.delay}s`};
+animation-name: ${showWord};
+animation-duration: 1s;
+animation-delay: ${Props => `${Props.delay}s`};
 
-  @keyframes example {
-  from {
-    transform: translate( 0px, -20px);
-    opacity: 0
-  }
-  to {
-    transform: translate( 0px, 0px);
-    opacity: 1
-  }
-}
 `
+
+
+
 
 export {
   DisplayOutputStyled,

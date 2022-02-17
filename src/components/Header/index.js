@@ -7,7 +7,7 @@ function Header() {
       <ButtonHeader>
         ?
       </ButtonHeader>
-      <AppTitle>TERMO SOLVER</AppTitle>
+      <AppTitle>TERMO HELPER</AppTitle>
       <ButtonHeader>
         M
       </ButtonHeader>

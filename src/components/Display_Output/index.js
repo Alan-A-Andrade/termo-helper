@@ -18,7 +18,7 @@ function DisplayOutput() {
         }
       </div>
       <WordListStyled>
-        {wordList.slice(0, 20).map((el, id) => <WordStyled delay={id / 10} key={`${id}_${el.join("")}`}>{el.join("").toUpperCase()}</WordStyled>)}
+        {wordList.slice(0, 20).map((el, id) => <WordStyled delay={(parseInt(id) / 10)} key={`${id}_${el.join("")}`}>{el.join("").toUpperCase()}</WordStyled>)}
       </WordListStyled>
     </DisplayOutputStyled>
   )
