@@ -14,12 +14,16 @@ export default function filterLetter(array, letter, position, answer, wordAnswer
 
   switch (answer) {
     case "wrong":
-      if (wordAnswer[0].includes(letter.toLowerCase())) {
-        if (wordAnswer[1][wordAnswer[0].indexOf(letter)] === "right")
-          arr = arr.filter((el, id) => !(removeFromArray(el, wordAnswer[0].indexOf(letter)).includes(letter)))
+      console.log(letter)
+      console.log("cheguei no caso wrong")
+      if (wordAnswer[0].includes(letter.toLowerCase()) && wordAnswer[1][wordAnswer[0].indexOf(letter)] === "right") {
+        console.log("cheguei com palabra ja certa")
+        arr = arr.filter((el, id) => !(removeFromArray(el, wordAnswer[0].indexOf(letter)).includes(letter)))
       }
       else {
-        arr = arr.filter(el => !el.includes(letter))
+        console.log(letter)
+        console.log("naõ deveria ter")
+        arr = arr.filter(el => el[position].toLowerCase() !== letter.toLowerCase())
       }
       break;
     case "right":
