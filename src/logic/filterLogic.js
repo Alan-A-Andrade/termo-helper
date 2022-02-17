@@ -1,15 +1,26 @@
 
 
-export default function filterLetter(array, letter, position, answer) {
+function removeFromArray(array, index) {
 
-  //nova ideia, guarda estado das letras corretas, se a letra, se a letra ja aparecer na palavra corretamente e ja estiver na errada,
-  //filtrar todo array tirando a palavra naquela posição
+  let arr1 = array.slice(0, index)
+  let arr2 = array.slice(index + 1, array.length)
+  let arr = [...arr1, ...arr2]
+  return arr
+}
+
+export default function filterLetter(array, letter, position, answer, wordAnswer) {
 
   let arr = [...array]
 
   switch (answer) {
     case "wrong":
-      arr = arr.filter(el => el[position].toLowerCase() !== letter.toLowerCase())
+      if (wordAnswer[0].includes(letter.toLowerCase())) {
+        if (wordAnswer[1][wordAnswer[0].indexOf(letter)] === "right")
+          arr = arr.filter((el, id) => !(removeFromArray(el, wordAnswer[0].indexOf(letter)).includes(letter)))
+      }
+      else {
+        arr = arr.filter(el => !el.includes(letter))
+      }
       break;
     case "right":
       arr = arr.filter(el => el[position].toLowerCase() === letter.toLowerCase())
@@ -24,6 +35,8 @@ export default function filterLetter(array, letter, position, answer) {
   return arr
 
 }
+
+
 
 
 

@@ -3,8 +3,6 @@ import useFilter from "../hooks/useFilter";
 import { termoList } from "../data/termo";
 import filterWordList from "../logic/filterWordListLogic";
 
-import filterLetter from "../logic/filterLogic";
-
 let arrayList = termoList.map(el => el.split(""))
 
 const WordListContext = createContext();
