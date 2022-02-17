@@ -51,8 +51,12 @@ function WordInput(Props) {
 
   function handleLetterInput(e, next) {
 
-    setWord({ ...word, [e.target.name]: { ...word[e.target.name], value: e.target.value } })
-
+    if (e.target.value.length > e.target.maxLength) {
+      return
+    }
+    else {
+      setWord({ ...word, [e.target.name]: { ...word[e.target.name], value: e.target.value } })
+    }
     if (!next) {
       return
     }
