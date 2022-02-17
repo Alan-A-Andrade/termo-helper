@@ -10616,7 +10616,7 @@ let freqTablePtBr = {
   z: 0.0047,
 }
 
-termoList = termoList.sort(random)
+termoList = termoList.sort(sortByFreq)
 
 function sortByFreq(a, b) {
 

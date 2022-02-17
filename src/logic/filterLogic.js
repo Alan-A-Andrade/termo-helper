@@ -8,30 +8,32 @@ function removeFromArray(array, index) {
   return arr
 }
 
+function getOccurrence(array, value) {
+  return array.filter((v) => (v === value)).length;
+}
+
 export default function filterLetter(array, letter, position, answer, wordAnswer) {
 
   let arr = [...array]
-
   letter = letter.toLowerCase()
-
   switch (answer) {
     case "wrong":
-      console.log(letter)
-      console.log("cheguei no caso wrong")
       if (wordAnswer[0].includes(letter.toLowerCase())
         && wordAnswer[1][wordAnswer[0].indexOf(letter.toLowerCase())] === "right") {
-        console.log("cheguei com palabra ja certa")
         arr = arr.filter((el, id) => !(removeFromArray(el, wordAnswer[0].indexOf(letter.toLowerCase())).includes(letter.toLowerCase())))
       }
       else if (wordAnswer[0].includes(letter.toLowerCase())
         && wordAnswer[1][wordAnswer[0].indexOf(letter.toLowerCase())] === "place") {
-        console.log(letter)
-        console.log("cheguei com palabra ja com lugar errado")
+
         arr = arr.filter(el => (el.some(l => l.toLowerCase() === letter.toLowerCase()) && el[position].toLowerCase() !== letter.toLowerCase()))
       }
+      else if (wordAnswer[0].includes(letter.toLowerCase())
+        && wordAnswer[1][wordAnswer[0].indexOf(letter.toLowerCase())] === "wrong"
+        && getOccurrence(wordAnswer[0], letter.toLowerCase()) > 1) {
+        arr = arr.filter(el => el[position].toLowerCase() !== letter.toLowerCase())
+      }
       else {
-        console.log(letter)
-        console.log("naõ deveria ter")
+
         arr = arr.filter(el => !el.includes(letter))
       }
       break;
