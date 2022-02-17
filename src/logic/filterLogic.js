@@ -24,7 +24,6 @@ export default function filterLetter(array, letter, position, answer, wordAnswer
       }
       else if (wordAnswer[0].includes(letter.toLowerCase())
         && wordAnswer[1][wordAnswer[0].indexOf(letter.toLowerCase())] === "place") {
-
         arr = arr.filter(el => (el.some(l => l.toLowerCase() === letter.toLowerCase()) && el[position].toLowerCase() !== letter.toLowerCase()))
       }
       else if (wordAnswer[0].includes(letter.toLowerCase())

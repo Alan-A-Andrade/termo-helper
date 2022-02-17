@@ -7,18 +7,36 @@ import styled from "styled-components";
 
 const AppStyled = styled.main`
 width: 100%;
-height: 100%;
+height: max-content;
 display: flex;
 box-sizing: border-box;
 padding: 20px 5px;
+
+
+@media (max-width: 768px) {
+
+flex-direction: column;
+align-items: center;
+
+font-size: 12px;
+
+overflow-x: hidden;
+}
 `
 
 const Separator = styled.div`
 width: 18px;
-height: 50vh;
+height: 20em;
 background-color: #4c4347;
 border-radius: 10px;
 margin: 10px;
+
+@media (max-width: 768px) {
+
+width: 80vw;
+height: 4px;
+}
+
 `
 
 function App() {

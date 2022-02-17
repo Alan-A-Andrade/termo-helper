@@ -10584,7 +10584,8 @@ let termoList = [
   'local',
   'gemer',
   'saber',
-  'visar'
+  'visar',
+  'codar',
 ]
 
 let freqTablePtBr = {
@@ -10616,7 +10617,7 @@ let freqTablePtBr = {
   z: 0.0047,
 }
 
-termoList = termoList.sort(sortByFreq)
+termoList = termoList.sort(random)
 
 function sortByFreq(a, b) {
 

@@ -11,8 +11,12 @@ flex-direction: column;
 
 overflow-y: hidden;
 
+.no-wordList{
+  font-size: 0.8em;
+    font-weight: 300;
+}
+
 .output-title{
-  padding: 10px 0px;
 
   p{
     font-size: 0.8em;
@@ -20,10 +24,22 @@ overflow-y: hidden;
   }
 }
 
+@media (max-width: 768px) {
+all: unset;
+font-size: 16px;
+}
+
 `
 const WordListStyled = styled.ul`
 display: flex;
 flex-direction: column;
+
+padding-top: 5px;
+
+@media (max-width: 768px) {
+ all: unset;
+ padding-top: 5px;
+}
 
 `
 

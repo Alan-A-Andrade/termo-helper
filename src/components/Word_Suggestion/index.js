@@ -11,9 +11,15 @@ function WordSuggestion(Props) {
 
   const [wordSuggested, setWordSuggested] = useState(["", "", "", "", "",])
 
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min
+  }
+
+  let n = getRandomInt(0, wordList.length - 1)
+
   useEffect(() => {
     if (wordList) {
-      setWordSuggested(wordList[0])
+      setWordSuggested(wordList[n])
     }
     else {
       setWordSuggested(["", "", "", "", "",])

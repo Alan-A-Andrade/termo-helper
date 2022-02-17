@@ -1,18 +1,29 @@
 import styled from "styled-components";
 
 const HeaderStyled = styled.header`
-  width:100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   padding: 10px;
 
+  @media (max-width: 768px) {
+  width: 100vw;
+    padding: unset;
+    margin: unset;
+  }
+
 `
 const AppTitle = styled.h1`
 
   font-size: 2em;
   font-weight: 600;
+
+  @media (max-width: 768px) {
+  font-size: 1.5em;
+  gap: unset;
+  }
 `
 const ButtonHeader = styled.button`
 
@@ -25,6 +36,7 @@ const ButtonHeader = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 5px;
 
 `
 
