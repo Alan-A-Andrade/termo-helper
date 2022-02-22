@@ -4,6 +4,8 @@ import DisplayInput from "./components/Display_Input";
 import DisplayOutput from "./components/Display_Output";
 import Header from "./components/Header";
 import styled from "styled-components";
+import HelpBox from "./components/help_screen";
+import { useState } from "react";
 
 const AppStyled = styled.main`
 width: 100%;
@@ -41,10 +43,19 @@ height: 4px;
 
 function App() {
 
+  const [displayHelp, setDisplayHelp] = useState(false)
+
   return (
     <FilterProvider>
       <WordListProvider>
-        <Header />
+        <HelpBox
+          state={displayHelp}
+          setState={setDisplayHelp}
+        />
+        <Header
+          setHelp={setDisplayHelp}
+          helpState={displayHelp}
+        />
         <AppStyled>
           <DisplayInput>
           </DisplayInput>

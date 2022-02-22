@@ -1,10 +1,10 @@
 import { HeaderStyled, AppTitle, ButtonHeader } from "./styled";
 
-function Header() {
+function Header(Props) {
 
   return (
     <HeaderStyled>
-      <ButtonHeader>
+      <ButtonHeader onClick={() => Props.setHelp(!Props.helpState)}>
         ?
       </ButtonHeader>
       <AppTitle>TERMO HELPER</AppTitle>

@@ -52,8 +52,6 @@ function WordInput(Props) {
   function handleLetterInput(e, next) {
 
     if (e.target.value.length > e.target.maxLength) {
-      setWord({ ...word, [e.target.name]: { ...word[e.target.name], value: e.target.value[1] } })
-      next.current.focus()
       return
     }
     else {
@@ -68,7 +66,7 @@ function WordInput(Props) {
 
   }
 
-  function handleBackSpace(e, last, next) {
+  function handleBackSpace(e, last) {
     if (e.keyCode === 8 && word[e.target.name].value === "") {
       setWord({ ...word, [e.target.name]: { ...word[e.target.name], answer: "", value: "" } })
       last.current.focus()
@@ -110,7 +108,7 @@ function WordInput(Props) {
         name={"first"}
         value={word.first.value}
         onChange={e => handleLetterInput(e, secondLetter)}
-        onKeyUp={(e) => handleBackSpace(e, firstLetter, secondLetter)}
+        onKeyUp={(e) => handleBackSpace(e, firstLetter)}
         ref={firstLetter}
         onClick={handleClick}
         disabled={Props.isLocked}
@@ -124,7 +122,7 @@ function WordInput(Props) {
         name={"second"}
         value={word.second.value}
         onChange={e => handleLetterInput(e, thirdLetter)}
-        onKeyUp={(e) => handleBackSpace(e, firstLetter, thirdLetter)}
+        onKeyUp={(e) => handleBackSpace(e, firstLetter)}
         ref={secondLetter}
         onClick={handleClick}
         disabled={Props.isLocked}
@@ -137,7 +135,7 @@ function WordInput(Props) {
         name={"third"}
         value={word.third.value}
         onChange={e => handleLetterInput(e, forthLetter)}
-        onKeyUp={(e) => handleBackSpace(e, secondLetter, forthLetter)}
+        onKeyUp={(e) => handleBackSpace(e, secondLetter)}
         ref={thirdLetter}
         onClick={handleClick}
         disabled={Props.isLocked}
@@ -150,7 +148,7 @@ function WordInput(Props) {
         name={"forth"}
         value={word.forth.value}
         onChange={e => handleLetterInput(e, fifthLetter)}
-        onKeyUp={(e) => handleBackSpace(e, thirdLetter, fifthLetter)}
+        onKeyUp={(e) => handleBackSpace(e, thirdLetter)}
         ref={forthLetter}
         onClick={handleClick}
         disabled={Props.isLocked}
@@ -163,7 +161,7 @@ function WordInput(Props) {
         name={"fifth"}
         value={word.fifth.value}
         onChange={handleLetterInput}
-        onKeyUp={(e) => handleBackSpace(e, forthLetter, forthLetter)}
+        onKeyUp={(e) => handleBackSpace(e, forthLetter)}
         ref={fifthLetter}
         onClick={handleClick}
         disabled={Props.isLocked}
