@@ -22,23 +22,37 @@ overflow-y: hidden;
     font-size: 0.8em;
     font-weight: 300;
   }
+  @media (max-width: 768px) {
+    font-size: 1.5em;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 768px) {
-all: unset;
-font-size: 16px;
+width: 100%;
+height: max-content;
+align-items: center;
+
+
 }
 
 `
 const WordListStyled = styled.ul`
-display: flex;
-flex-direction: column;
 
 padding-top: 5px;
 
 @media (max-width: 768px) {
- all: unset;
  padding-top: 5px;
+  height: auto;
+ columns: 3;
+
+ h1{
+   font-size: 1.3em;
+ }
+
 }
 
 `
