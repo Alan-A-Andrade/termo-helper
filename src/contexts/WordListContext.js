@@ -2,8 +2,12 @@ import { createContext, useState, useEffect } from "react";
 import useFilter from "../hooks/useFilter";
 import { termoList } from "../data/termo";
 import filterWordList from "../logic/filterWordListLogic";
+import { sortByUniqueAndFreq } from "../logic/wordFrequencyLogic"
+
 
 let arrayList = termoList.map(el => el.split(""))
+
+arrayList = arrayList.sort(sortByUniqueAndFreq)
 
 const WordListContext = createContext();
 

@@ -15,7 +15,7 @@ function WordSuggestion(Props) {
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
 
-  let n = getRandomInt(0, wordList.length - 1)
+  let n = getRandomInt(0, Math.min(wordList.length - 1, 10))
 
   useEffect(() => {
     if (wordList) {

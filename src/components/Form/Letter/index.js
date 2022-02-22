@@ -40,6 +40,15 @@ function handleBorderColorChange(state) {
 const Letter = styled.input`
 
 all: unset;
+
+-webkit-touch-callout:none;
+-webkit-user-select:none;
+-khtml-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+user-select:none;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+
 width: 1.2em;
 height: 1.2em;
 border: 0.1em solid;
@@ -67,6 +76,7 @@ transition: ease-in-out;
     height: 1.115em;
     border-bottom: 0.2em solid;
     border-color: ${props => handleBorderColorChange(props.answer)};
+    border-bottom-color: #4c4347;
 }
 
 &:disabled{
@@ -74,10 +84,11 @@ transition: ease-in-out;
   border-color: #615458;
 }
 
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+&::selection{
+  cursor: none;
+}
+
+
 
 `
 
