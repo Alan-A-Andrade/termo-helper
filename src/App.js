@@ -5,6 +5,7 @@ import DisplayOutput from "./components/Display_Output";
 import Header from "./components/Header";
 import styled from "styled-components";
 import HelpBox from "./components/help_screen";
+import MoreInformation from "./components/more_information_screen";
 import { useState } from "react";
 
 const AppStyled = styled.main`
@@ -44,6 +45,7 @@ height: 4px;
 function App() {
 
   const [displayHelp, setDisplayHelp] = useState(false)
+  const [displayInfo, setDisplayInfo] = useState(false)
 
   return (
     <FilterProvider>
@@ -52,9 +54,15 @@ function App() {
           state={displayHelp}
           setState={setDisplayHelp}
         />
+        <MoreInformation
+          state={displayInfo}
+          setState={setDisplayInfo}
+        />
         <Header
           setHelp={setDisplayHelp}
           helpState={displayHelp}
+          setInfo={setDisplayInfo}
+          infoState={displayInfo}
         />
         <AppStyled>
           <DisplayInput>

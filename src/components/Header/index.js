@@ -8,7 +8,7 @@ function Header(Props) {
         ?
       </ButtonHeader>
       <AppTitle>TERMO HELPER</AppTitle>
-      <ButtonHeader>
+      <ButtonHeader onClick={() => Props.setInfo(!Props.infoState)}>
         M
       </ButtonHeader>
     </HeaderStyled >

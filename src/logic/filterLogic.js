@@ -12,6 +12,8 @@ function getOccurrence(array, value) {
   return array.filter((v) => (v === value)).length;
 }
 
+
+
 export default function filterLetter(array, letter, position, answer, wordAnswer) {
 
   let arr = [...array]
@@ -19,6 +21,7 @@ export default function filterLetter(array, letter, position, answer, wordAnswer
   switch (answer) {
     case "wrong":
       if (getOccurrence(wordAnswer[0], letter.toLowerCase()) > 1) {
+
         if (wordAnswer[1][wordAnswer[0].indexOf(letter.toLowerCase())] === "right") {
           arr = arr.filter((el, id) => !(removeFromArray(el, wordAnswer[0].indexOf(letter.toLowerCase())).includes(letter.toLowerCase())))
         }
@@ -28,6 +31,7 @@ export default function filterLetter(array, letter, position, answer, wordAnswer
         if (wordAnswer[1][wordAnswer[0].indexOf(letter.toLowerCase())] === "wrong") {
           arr = arr.filter(el => el[position].toLowerCase() !== letter.toLowerCase())
         }
+
       }
       else {
 

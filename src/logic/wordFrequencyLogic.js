@@ -38,8 +38,8 @@ function sortByUniqueAndFreq(a, b) {
   let aEq = freqTablePtBr[a[0]] * freqTablePtBr[a[1]] * freqTablePtBr[a[2]] * freqTablePtBr[a[3]] * freqTablePtBr[a[4]]
   let bEq = freqTablePtBr[b[0]] * freqTablePtBr[b[1]] * freqTablePtBr[b[2]] * freqTablePtBr[b[3]] * freqTablePtBr[b[4]]
 
-  aEq = (aEq / Math.pow(numRepeatedChar(a), 3))
-  bEq = (bEq / Math.pow(numRepeatedChar(b), 3))
+  aEq = (aEq / Math.pow(numRepeatedChar(a), 10))
+  bEq = (bEq / Math.pow(numRepeatedChar(b), 10))
 
   return bEq - aEq
 
@@ -59,5 +59,5 @@ function random() {
 }
 
 export {
-  sortByUniqueAndFreq,
+  sortByUniqueAndFreq, random
 }

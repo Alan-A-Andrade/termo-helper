@@ -9,11 +9,6 @@ height: 100vh;
 
 overflow-y: scroll;
 
-a{
-  all:unset;
-  text-decoration: none;
-  color: white;
-}
 
 background-color: transparent;
 opacity: 1;
@@ -25,6 +20,12 @@ justify-content: center;
 
 z-index: 20;
 
+a{
+  all:unset;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
 
 .help-text-box{
 width:80vw;
