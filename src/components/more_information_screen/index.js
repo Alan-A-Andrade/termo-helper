@@ -9,9 +9,8 @@ function MoreInformation(Props) {
       <div className="help-text-box">
         <div>
           <h1>Mais informações</h1>
+          <p>Prazer, me chamo Alan! Caso queria me conhecer mais, pode me achar no <a href="https://www.linkedin.com/in/alan-de-andrade/">LinkedIn</a> {<br />}</p>
           <p><a href="https://term.ooo/">Termo</a> foi criado por <a href="https://twitter.com/fserb">Fernando Serboncini</a>{<br />}</p>
-          <p>{<br />}</p>
-          <p>Caso queria me conhecer mais, pode me achar no <a href="https://www.linkedin.com/in/alan-de-andrade/">LinkedIn</a> {<br />}</p>
         </div>
       </div>
     </HelpStyled>
