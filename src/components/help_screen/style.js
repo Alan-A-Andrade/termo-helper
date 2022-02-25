@@ -9,11 +9,7 @@ height: 100vh;
 
 overflow-y: scroll;
 
-a{
-  all:unset;
-  text-decoration: none;
-  color: white;
-}
+
 
 background-color: transparent;
 opacity: 1;

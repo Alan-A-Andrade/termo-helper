@@ -79,13 +79,13 @@ function WordInput(Props) {
 
       switch (word[e.target.name].answer) {
         case "":
-          setWord({ ...word, [e.target.name]: { ...word[e.target.name], answer: "right" } })
+          setWord({ ...word, [e.target.name]: { ...word[e.target.name], answer: "wrong" } })
           return
-        case "right":
+        case "wrong":
           setWord({ ...word, [e.target.name]: { ...word[e.target.name], answer: "place" } })
           return
         case "place":
-          setWord({ ...word, [e.target.name]: { ...word[e.target.name], answer: "wrong" } })
+          setWord({ ...word, [e.target.name]: { ...word[e.target.name], answer: "right" } })
           return
         default:
           setWord({ ...word, [e.target.name]: { ...word[e.target.name], answer: "" } })
